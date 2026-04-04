@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# PLY解析器生成文件
+*parser.out
+*tab.py
+
+# 日志文件
+log/
+*.log
+
+# 输出文件
+out/
+output.md
+*.puml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 临时文件
+*.tmp
+*.bak
+*.cache
+
+# 虚拟环境
+venv/
+.env/
+.venv/
+env/
+
+# 测试文件
+test/
+test*.py
+
+# ctags生成的临时文件
+tags

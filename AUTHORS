@@ -1,0 +1,25 @@
+# ncdocgen 项目贡献者
+
+## 原作者
+- **Kaikuo Zhuo** <kaikuo.zhuo@hotmail.com>
+  - 创建原始项目
+  - GitHub: https://github.com/kzkgoo0099
+  - Gitee: https://gitee.com/kzhuo
+  - 项目原始地址: https://gitee.com/kzhuo/ncdocgen
+
+## 当前维护者
+- **Kuan He (何宽)** <hekuan_oscar@qq.com>
+  - 移除了一些功能
+  - 项目改进和功能扩展
+  - 添加GUI界面
+  - 添加自动Key.txt生成功能
+  - 修复中文字符支持
+  - 添加详细代码注释
+
+## 致谢
+感谢 Kaikuo Zhuo 创建了优秀的 ncdocgen 项目，为本项目奠定了基础。
+
+## 如何贡献
+欢迎提交 Issue 和 Pull Request！
+
+联系方式: hekuan_oscar@qq.com
