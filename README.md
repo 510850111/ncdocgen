@@ -70,6 +70,7 @@ ncdocgen 是一个功能强大的C语言文档自动生成工具，可以根据�
 | [用户手册](docs/USER_GUIDE.md) | 面向最终用户的详细使用说明 |
 | [架构设计](docs/ARCHITECTURE.md) | 系统架构和模块设计说明 |
 | [开发文档](docs/DEVELOPMENT.md) | 面向开发者的开发和维护指南 |
+| [发布指南](docs/RELEASE_GUIDE.md) | 如何打包和发布新版本 |
 | [常见问题](docs/FAQ.md) | 常见问题解答 |
 | [更新日志](docs/CHANGELOG.md) | 版本更新历史记录 |
 
@@ -348,6 +349,24 @@ ncdocgen/
 - **Click**: 命令行参数解析库
 - **PyInstaller**: 打包工具
 - **universal-ctags**: 代码符号提取工具
+
+## 发布新版本
+
+如果你是项目维护者，需要发布新版本：
+
+```bash
+# 1. 更新版本号并提交
+# 2. 打包
+python build_exe.py
+
+# 3. 打标签
+git tag -a v1.0.1 -m "Release version 1.0.1"
+git push origin v1.0.1
+
+# 4. 在 GitHub 创建 Release，上传 dist\ncdocgen.exe
+```
+
+详细发布流程请参阅 [发布指南](docs/RELEASE_GUIDE.md)。
 
 ## 开发相关
 

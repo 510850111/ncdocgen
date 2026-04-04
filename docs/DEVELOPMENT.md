@@ -308,25 +308,34 @@ print(f"节点类型: {ttype}, 内容: {node}")
 
 ## 打包发布
 
-### 开发版本打包
+详细的发布流程请参阅 [RELEASE_GUIDE.md](RELEASE_GUIDE.md)。
+
+### 快速发布流程
 
 ```bash
-# 1. 确保所有修改已提交
-git status
+# 1. 更新版本号（cdocgen.py, gui.py, README.md, CHANGELOG.md）
 
-# 2. 更新版本号
-# 修改 cdocgen.py 中的 __version__
+# 2. 提交更改
+git add .
+git commit -m "chore: 准备发布 v1.0.1"
+git push origin main
 
-# 3. 运行打包脚本
+# 3. 打包
 python build_exe.py
 
-# 4. 验证打包结果
+# 4. 测试
 dist\ncdocgen.exe --cli --help
+
+# 5. 打标签
+git tag -a v1.0.1 -m "Release version 1.0.1"
+git push origin v1.0.1
+
+# 6. 创建 GitHub Release（上传 dist\ncdocgen.exe）
 ```
 
 ### 发布检查清单
 
-- [ ] 版本号已更新
+- [ ] 版本号已更新（cdocgen.py, gui.py, README.md）
 - [ ] CHANGELOG.md 已更新
 - [ ] 所有测试通过
 - [ ] GUI功能验证正常
@@ -334,19 +343,8 @@ dist\ncdocgen.exe --cli --help
 - [ ] Key.txt生成功能正常
 - [ ] 文档生成功能正常
 - [ ] 打包后的exe可独立运行
-
-### 发布流程
-
-```bash
-# 1. 打标签
-git tag -a v1.0.1 -m "Release version 1.0.1"
-
-# 2. 推送标签
-git push origin v1.0.1
-
-# 3. 创建Release
-# 在GitHub上创建Release，上传dist/ncdocgen.exe
-```
+- [ ] Git tag 已推送
+- [ ] GitHub Release 已创建
 
 ## 贡献指南
 

@@ -7,6 +7,7 @@
 | [用户手册](USER_GUIDE.md) | 面向最终用户的详细使用说明 |
 | [架构设计](ARCHITECTURE.md) | 系统架构和模块设计说明 |
 | [开发文档](DEVELOPMENT.md) | 面向开发者的开发和维护指南 |
+| [发布指南](RELEASE_GUIDE.md) | 如何打包和发布新版本 |
 | [常见问题](FAQ.md) | 常见问题解答 |
 | [更新日志](CHANGELOG.md) | 版本更新历史记录 |
 
