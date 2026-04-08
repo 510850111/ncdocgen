@@ -95,16 +95,23 @@ void init_system(void)
 {
     /** 配置GPIO */
     gpio_init();
+
+    /** 初始化UART*/
+    UART_INIT();
     
-    /** 初始化UART */
-    if (uart_init() != 0) {
+    /** 初始化成功? */
+    if (0 != g_initSucc) 
+    {
+        /** 系统初始化完成 */
+        g_system_ready = 1;
+    }
+    else
+    {
         /** 初始化失败，记录错误 */
         log_error("UART init failed");
-        return;
     }
     
-    /** 系统初始化完成 */
-    g_system_ready = 1;
+    return;
 }
 ```
 
@@ -112,15 +119,14 @@ void init_system(void)
 ```plantuml
 @startuml
 start
-:初始化系统;
 :配置GPIO;
 :初始化UART;
 if (初始化成功?) then (Y)
   :系统初始化完成;
 else (N)
-  :记录错误;
-  stop
+  :初始化失败，记录错误;
 endif
+
 stop
 @enduml
 ```
@@ -363,7 +369,7 @@ python build_exe.py
 git tag -a v1.0.1 -m "Release version 1.0.1"
 git push origin v1.0.1
 
-# 4. 在 GitHub 创建 Release，上传 dist\ncdocgen.exe
+# 4. 在 GitHub 创建 Release，上传 dist\ncdocgen.exe 和 dist\ncdocgen-cli.exe
 ```
 
 详细发布流程请参阅 [发布指南](docs/RELEASE_GUIDE.md)。
@@ -407,7 +413,7 @@ python -m ncdocgen --cli test.c -o out.md
 # 运行打包脚本
 python build_exe.py
 
-# 输出: dist/ncdocgen.exe
+# 输出: dist/ncdocgen.exe, dist/ncdocgen-cli.exe
 ```
 
 更多开发信息请参阅 [开发文档](docs/DEVELOPMENT.md)。

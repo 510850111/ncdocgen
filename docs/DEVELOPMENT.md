@@ -324,7 +324,7 @@ git push origin main
 python build_exe.py
 
 # 4. 测试
-dist\ncdocgen.exe --cli --help
+dist\ncdocgen-cli.exe --help
 
 # 5. 打标签
 git tag -a v1.0.1 -m "Release version 1.0.1"

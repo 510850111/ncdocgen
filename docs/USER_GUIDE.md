@@ -43,7 +43,7 @@ ncdocgen 是一个C语言文档生成器，可以根据代码中的 doxygen 风�
 ### 启动方式
 
 - **GUI模式**: 直接双击 `ncdocgen.exe`
-- **命令行模式**: `ncdocgen.exe --cli [参数]`
+- **命令行模式**: `ncdocgen-cli.exe [参数]`
 
 ## 界面说明
 
@@ -156,19 +156,19 @@ ncdocgen 是一个C语言文档生成器，可以根据代码中的 doxygen 风�
 
 ```bash
 # 基本用法
-ncdocgen.exe --cli code.c -o output.md
+ncdocgen-cli.exe code.c -o output.md
 
 # 多文件
-ncdocgen.exe --cli file1.c file2.c -o out.md
+ncdocgen-cli.exe file1.c file2.c -o out.md
 
 # 指定Key.txt
-ncdocgen.exe --cli *.c -k Key.txt -v
+ncdocgen-cli.exe *.c -k Key.txt -v
 
 # 只更新Key.txt
-ncdocgen.exe --cli --update-key --project-path ./src
+ncdocgen-cli.exe --update-key --project-path ./src
 
 # 帮助
-ncdocgen.exe --cli --help
+ncdocgen-cli.exe --help
 ```
 
 ### 命令行参数

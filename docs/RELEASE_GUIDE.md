@@ -78,7 +78,8 @@ python build_exe.py
 打包成功后生成：
 ```
 dist/
-└── ncdocgen.exe    # 单文件可执行程序（约 15-20MB）
+├── ncdocgen.exe      # GUI 可执行程序（约 15-20MB）
+└── ncdocgen-cli.exe  # CLI 可执行程序（约 15-20MB）
 ```
 
 ---
@@ -98,13 +99,13 @@ dist/
 - [ ] **CLI 功能测试**
   ```bash
   # 测试帮助信息
-  dist\ncdocgen.exe --cli --help
+  dist\ncdocgen-cli.exe --help
   
   # 测试文档生成
-  dist\ncdocgen.exe --cli test.c -o test_out.md -v
+  dist\ncdocgen-cli.exe test.c -o test_out.md -v
   
   # 测试 Key.txt 生成
-  dist\ncdocgen.exe --cli --update-key --project-path . -v
+  dist\ncdocgen-cli.exe --update-key --project-path . -v
   ```
 
 - [ ] **独立运行测试**
@@ -164,11 +165,12 @@ git push origin v1.0.1
 - 修复1描述
 
 ### 下载
-- `ncdocgen.exe` - Windows 单文件可执行程序
+- `ncdocgen.exe` - Windows GUI 可执行程序
+- `ncdocgen-cli.exe` - Windows CLI 可执行程序
 
 ### 使用说明
-1. 下载 `ncdocgen.exe`
-2. 双击运行（无需安装）
+1. 下载 `ncdocgen.exe` 或 `ncdocgen-cli.exe`
+2. 双击运行 GUI 版本，或在命令行使用 CLI 版本（无需安装）
 3. 首次使用请先生成 Key.txt
 
 ### 系统要求
@@ -180,7 +182,7 @@ git push origin v1.0.1
 **完整更新日志**: [CHANGELOG.md](https://github.com/510850111/ncdocgen/blob/main/docs/CHANGELOG.md)
 ```
 
-5. 上传文件：将 `dist\ncdocgen.exe` 拖放到附件区域
+5. 上传文件：将 `dist\ncdocgen.exe` 和 `dist\ncdocgen-cli.exe` 拖放到附件区域
 6. 如果是预发布版本，勾选 **This is a pre-release**
 7. 点击 **Publish release**
 
@@ -191,7 +193,7 @@ git push origin v1.0.1
 gh release create v1.0.1 \
   --title "ncdocgen v1.0.1" \
   --notes-file release_notes.md \
-  dist\ncdocgen.exe
+  dist\ncdocgen.exe dist\ncdocgen-cli.exe
 ```
 
 ---
@@ -201,7 +203,7 @@ gh release create v1.0.1 \
 ### 验证发布
 
 - [ ] Release 页面显示正常：`https://github.com/510850111/ncdocgen/releases`
-- [ ] 附件 `ncdocgen.exe` 可正常下载
+- [ ] 附件 `ncdocgen.exe` 和 `ncdocgen-cli.exe` 可正常下载
 - [ ] 下载的文件能正常运行
 
 ### 更新文档
@@ -231,14 +233,15 @@ git push origin main
 python build_exe.py
 
 # 4. 测试
-dist\ncdocgen.exe --cli --help
+dist\ncdocgen.exe        # 测试 GUI
+dist\ncdocgen-cli.exe --help  # 测试 CLI
 
 # 5. 打标签
 git tag -a v1.0.1 -m "Release version 1.0.1"
 git push origin v1.0.1
 
 # 6. 创建 GitHub Release（通过 Web 界面或 CLI）
-# 上传 dist\ncdocgen.exe
+# 上传 dist\ncdocgen.exe 和 dist\ncdocgen-cli.exe
 ```
 
 ---
@@ -250,7 +253,7 @@ git push origin v1.0.1
 **A:** 
 1. 检查 PyInstaller 是否安装：`pip install pyinstaller`
 2. 查看错误日志，常见问题：
-   - 文件被占用：关闭运行的 ncdocgen.exe
+   - 文件被占用：关闭运行的 ncdocgen.exe 或 ncdocgen-cli.exe
    - 权限问题：以管理员身份运行
 
 ### Q: 打包后的 EXE 太大？

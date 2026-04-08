@@ -272,7 +272,7 @@ StatusCode=AUTO
 
 3. **命令行调试**
    ```bash
-   ncdocgen.exe --cli your_file.c -v
+   ncdocgen-cli.exe your_file.c -v
    ```
 
 ### Q: 如何报告bug？
